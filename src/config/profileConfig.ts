@@ -9,10 +9,10 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/tom.avif",
 
 	// 名字
-	name: "Firefly",
+	name: "Tom",
 
 	// 个人签名
-	bio: "胸中一点浩然气，天地千里快哉风",
+	bio: "胸中一点浩然气 天地千里快哉风",
 
 	// 链接配置
 	// 已经预装的图标集：fa7-brands，fa7-regular，fa7-solid，material-symbols，simple-icons
@@ -40,9 +40,9 @@ export const profileConfig: ProfileConfig = {
 			showName: false,
 		},
 		{
-			name: "RSS",
-			icon: "fa7-solid:rss",
-			url: "/rss/",
+			name: "bilibili",
+			icon: "fa7-brands:bilibili",
+			url: "https://space.bilibili.com/3494355849448262",
 			showName: false,
 		},
 	],
