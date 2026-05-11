@@ -58,7 +58,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 	// 自定义导航栏链接,并且支持多级菜单
 	links.push({
-		name: "我的",
+		name: "链接",
 		url: "/links/",
 		icon: "material-symbols:link",
 

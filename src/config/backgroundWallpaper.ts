@@ -136,7 +136,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 				mobile: true,
 			},
 			// 是否允许用户通过控制面板切换水波纹动画
-			switchable: true,
+			switchable: false,
 		},
 	},
 	// Banner模式特有配置
