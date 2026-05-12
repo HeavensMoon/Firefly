@@ -267,6 +267,7 @@ export type CommentConfig = {
 		inputPosition: string;
 		lang: string;
 		loading: string;
+		theme: string;
 	};
 	disqus?: {
 		shortname: string;

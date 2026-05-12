@@ -62,6 +62,8 @@ export const commentConfig: CommentConfig = {
 		reactionsEnabled: "1",
 		// 获取 Giscus 评论系统元数据功能
 		emitMetadata: "1",
+		// 获取 Giscus 评论系统主题
+		theme: "gruvbox_dark",
 		// 获取 Giscus 评论系统输入位置
 		inputPosition: "top",
 		// 获取 Giscus 评论系统语言
