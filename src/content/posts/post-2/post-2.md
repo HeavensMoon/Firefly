@@ -26,11 +26,7 @@ draft: false
 $$
 R1 = R2 \times \frac{V_{OUT} - 0.5V}{0.5V}
 $$
-取 R2 = 20kΩ（常用值，范围 1k~50kΩ）即 R1 = 180kΩ
-## 电感计算
-降压模式下    
-$$
-L_{BUCK} = \frac{V_{OUT}}{f_{SW} \times \Delta I_L} \times (1 - \frac{V_{OUT}}{V_{IN}})$$   
+取 R2 = 20kΩ（常用值，范围 1k~50kΩ）即 R1 = 180kΩ  
 ## 输入电容  
 推荐：6 × 10µF/25V 1210
 ## 输出电容  
