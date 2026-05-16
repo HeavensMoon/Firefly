@@ -1,7 +1,7 @@
 ---
 title: CMOS门电路
 published: 2026-05-09
-description: 这是文章的简短描述
+description: CMOS反相器的基础特性
 image: ./cover.jpg
 tags: [数字电子技术基础]
 category: 数字电子技术基础
