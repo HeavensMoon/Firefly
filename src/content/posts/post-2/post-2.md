@@ -8,4 +8,4 @@ category: 电路设计
 draft: false
 ---
 
-[MP2980](MP2980GR.pdf)
+[MP2980GR数据手册](https://www.monolithicpower.cn/cn/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP2980GR/document_id/11523/)
