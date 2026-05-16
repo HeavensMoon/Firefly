@@ -60,4 +60,29 @@ v_{GS2} &= V_{DD} > V_{GS(th)N}
 \end{aligned}
 \right.
 $$
-T<sub>1</sub> 截止 T<sub>2</sub>导通，输出为 V<sub>OL</sub>，V<sub>OL</sub> $\approx$ 0
+T<sub>1</sub> 截止 T<sub>2</sub>导通，输出为 V<sub>OL</sub>，V<sub>OL</sub> $\approx$ 0  
+
+## 电压传输特性和电流传输特性
+![电压传输特性](image.png)  
+设 V<sub>DD</sub> > V<sub>GS(th)N</sub> + | V<sub>GS(th)P</sub> |，且 V<sub>GS(th)N</sub> =  | V<sub>GS(th)P</sub> |     
+位于AB段时， V<sub>1</sub> <  V<sub>GS(th)N</sub> ，| V<sub>GS1</sub> | > | V<sub>GS(th)P</sub> |，故T1导通并工作在低电阻的电阻区， V<sub>O</sub> = V<sub>OH</sub> $\approx$ V<sub>DD</sub>   
+位于CD段时， V<sub>1</sub> > V<sub>DD</sub> - | V<sub>GS(th)P</sub> |，| V<sub>GS1</sub> | < | V<sub>GS(th)P</sub> |，T2导通，V<sub>O</sub> = V<sub>OL</sub> $\approx$ 0  
+位于BC段时， V<sub>GS(th)N</sub> <  V<sub>1</sub> < V<sub>DD</sub> - | V<sub>GS(th)P</sub> |，V<sub>GS2</sub> > V<sub>GS(th)N</sub> ，| V<sub>GS1</sub> | > | V<sub>GS(th)P</sub> |，T1 T2同时导通  
+若T1和T2参数一致， V<sub>1</sub> =  $\frac{1}{2}$V<sub>DD</sub> 时两者导通内阻相等，中点输入电压称为反相器的阈值电压 V<sub>TH</sub>  
+
+![电流传输特性](image-1.png)  
+位于AB段时，T2截止，内阻很大，流过T1和T2的漏极电流几乎等于0  
+位于CD段时，T1截止，内阻很大，流过T1和T2的漏极电流几乎等于0   
+位于BC段时，T1和T2同时导通，当 V<sub>1</sub> =  $\frac{1}{2}$V<sub>DD</sub> 附近时Id最大   
+
+## 输入噪声容限
+![输入噪声容限](image-2.png)  
+在保证输出高、低电(变化的大小不超过规定的允许限度)的条件下，允许输入信号的高、低电平有一个波动范围，这个范围称为输入端的噪声容限   
+输入为high时  
+$$
+V_{NH}=V_{OH(min)}-V_{IH(min)}
+$$
+输入为low时  
+$$
+V_{NL}=V_{OL(max)}-V_{IL(max)}
+$$
