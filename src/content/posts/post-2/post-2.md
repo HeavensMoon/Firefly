@@ -20,24 +20,24 @@ draft: false
 # PCB
 ![正面](image-1.png)
 ![背面](image-2.png)
-# 实物
-
 # 电路设计要点
 ##  电阻计算
 基准电压VREF=0.5V，通过FB分压  
-$$R1 = R2 \times \frac{V_{OUT} - 0.5V}{0.5V}$$
+$$
+R1 = R2 \times \frac{V_{OUT} - 0.5V}{0.5V}
+$$
 取 R2 = 20kΩ（常用值，范围 1k~50kΩ）即 R1 = 180kΩ
 ## 电感计算
-降压模式下  
+降压模式下    
 $$
-L_{BUCK} = \frac{V_{OUT}}{f_{SW} \times \Delta I_L} \times (1 - \frac{V_{OUT}}{V_{IN}})$$  
-## 输入电容
+L_{BUCK} = \frac{V_{OUT}}{f_{SW} \times \Delta I_L} \times (1 - \frac{V_{OUT}}{V_{IN}})$$   
+## 输入电容  
 推荐：6 × 10µF/25V 1210
-## 输出电容
-推荐：4×22µF 陶瓷电容（25V）+ 2×100µF 铝电解电容 降低纹波和改善瞬态  
+## 输出电容  
+推荐：4×22µF 陶瓷电容（25V）+ 2×100µF 铝电解电容 降低纹波和改善瞬态    
 ## 软启动电容
 $$
 t_{SS}(ms) = \frac{C_{SS}(nF) \times V_{REF}(V)}{6\mu A}
 $$
-选择MPS送的10uf电容，计算得$t_{SS}=83ms$  
+选择MPS送的10uf电容，计算得$t_{SS}=83ms$    
 # 芯片测试数据  
