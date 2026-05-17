@@ -36,4 +36,4 @@ $$
 P=\frac{24^2}{500}=1.15W
 $$
 ## PD诱骗
-[CH224A芯片手册](CH224.pdf)
+[CH224A芯片手册](https://www.semiee.com/file2/6494247c2f9dcd2a6cb5fa423fe5872b/WCH/WCH-CH224DS1_V2.0.PDF)
