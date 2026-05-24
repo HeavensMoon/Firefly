@@ -1,7 +1,7 @@
 ---
 title: XM Power Kit
 published: 2026-05-17
-description: 关于可调电源，万用表，示波器，信号发生器的四合一复刻记录
+description: 关于数控电源，万用表，示波器，信号发生器的四合一复刻记录
 image: ./cover.jpg
 tags: [电路设计]
 category: 电路设计
@@ -36,6 +36,15 @@ $$
 P=\frac{24^2}{500}=1.15W
 $$
 ## PD诱骗
-[CH224A芯片手册](https://www.semiee.com/file2/6494247c2f9dcd2a6cb5fa423fe5872b/WCH/WCH-CH224DS1_V2.0.PDF)  
+[CH224A芯片手册](https://www.semiee.com/file2/503651f5692758e97cb3b3756c6d29b4/WCH/WCH-CH224DS1_V2.0.PDF)  
 ![PD诱骗](image-1.png)  
-
+## 双输入保护 
+[MX5050T](https://www.semiee.com/file2/fcaa327a011006ce89bff922fd22cdea/Maxinmicro/Maxinmicro-MX5050T-DS-2301-V13.pdf)
+![双输入保护电路](image-2.png)  
+1. 具体工作流程  
+   1. 一端上电后MOS管体二极管(寄生二极管)导通，VBUS电位上升   
+   2. MX5050T检测压差，$V_{IN}-V_{OUT}>30mV$时开始给MOS栅极充电  
+   3. MX5050T内有电荷泵将MOS管G级拉高，$V_{GS}>V_{th}$，MOS管导通  
+   4. 原来体二极管的压降为0.7V，压降消失(电流从体二极管转向MOS沟道)   
+2. 防倒灌电流     
+假设VBUS被DC拉到5V，左端的$OUT>IN$，即$V_{OUT}-V_{IN}>28mV$,芯片关闭MOS
