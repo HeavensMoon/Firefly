@@ -62,8 +62,21 @@ $$
    4. 原来体二极管的压降为0.7V，压降消失(电流从体二极管转向MOS沟道)   
 2. 防倒灌电流     
 假设VBUS被DC拉到5V，左端的$OUT>IN$，即$V_{OUT}-V_{IN}>28mV$,芯片关闭MOS
+## 入端检测
+[INA226](https://www.semiee.com/file2/c08b2bf94bdfa42743f99b027c4c35ea/TI/TI-INA226.pdf)  
+![入端检测](image-5.png)
+这个电路用来检测USB输入的电压和电流，MCU通过I2C读取数据  
+采样电阻R52（一般选2512封装1W），电流流过时产生压降，VIN+接高电位，VIN-接低电位  
+R53-R54-C65组成差分RC低通滤波器，可降低开关电源噪声  
+$$
+X_{C}=\frac{1}{2πfC}
+$$
+$f$越大，电容阻抗越小，高频差模尖峰出现时，电容短接高频差分噪声，VIN+和VIN-拉近，差值变小，R53和R54起阻尼和限流的作用  
+## 出端检测
+
 ## BUCK电路
 [ETA2821S2G](https://www.semiee.com/file2/e4659f0744341b24532ecb0faafd2960/ETA/ETA-ETA2821_V1.1.pdf)  
 ![IN->4V](image-3.png)  
+
 ### 输入滤波
 减小输入纹波，给芯片提供瞬态电流
