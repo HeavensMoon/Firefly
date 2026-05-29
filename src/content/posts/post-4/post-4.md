@@ -1,7 +1,7 @@
 ---
 title: XM Power Kit
 published: 2026-05-17
-description: 关于数控电源，万用表，示波器，信号发生器的四合一复刻记录
+description: 关于数控电源，万用表，示波器，信号发生器的四合一复刻记录(硬件篇)
 image: ./cover.jpg
 tags: [电路设计]
 category: 电路设计
@@ -62,5 +62,8 @@ $$
    4. 原来体二极管的压降为0.7V，压降消失(电流从体二极管转向MOS沟道)   
 2. 防倒灌电流     
 假设VBUS被DC拉到5V，左端的$OUT>IN$，即$V_{OUT}-V_{IN}>28mV$,芯片关闭MOS
-## BUCK电路  
-![IN->4V](image-3.png)
+## BUCK电路
+[ETA2821S2G](https://www.semiee.com/file2/e4659f0744341b24532ecb0faafd2960/ETA/ETA-ETA2821_V1.1.pdf)  
+![IN->4V](image-3.png)  
+### 输入滤波
+减小输入纹波，给芯片提供瞬态电流
