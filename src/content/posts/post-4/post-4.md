@@ -88,9 +88,24 @@ R57+C66形成一级低通滤波，$f_{C}≈16Hz$，输出的是慢慢变化的�
 R58和C67形成二级高通滤波，$f_{C}≈7MHz$，主要抗瞬态尖峰，为ADC输入隔离  
 再看下半部分，R56与R59分压，C68分压滤波  
 电压跟随器LMV321(电压跟随器的输入阻抗大，输出阻抗小)形成一个Buffer(缓冲器)增强驱动ADC
-## BUCK电路
-[ETA2821S2G](https://www.semiee.com/file2/e4659f0744341b24532ecb0faafd2960/ETA/ETA-ETA2821_V1.1.pdf)  
-![IN->4V](image-3.png)  
-
+## Buck-Boost电路
+[LM5176](https://www.semiee.com/file2/dcb01af1fff7861bf32e9eefe10344f5/TI/TI-LM5176.pdf)
+![BUCK-BOOST](image-7.png)  
 ### 输入滤波
 减小输入纹波，给芯片提供瞬态电流
+### 同步四开关Buck-Boost
+先看左半部分，Buck桥(输入半桥)，当处于Buck模式时，U11常导通，U13常关闭，U10 PWM，U12 同步整流  
+工作状态：U10 ON U12 OFF，电感充电 U10 OFF U12 ON，电感续流  
+再看右半部分，Boost桥，当处于Boost模式时，U10常导通，U12常关闭，U11 PWM，U13 同步整流  
+工作状态：U11 OFF U13 ON，电感储能 U11 ON U13 OFF，电感放能  
+当处于Buck-Boost模式时(输入电压接近输出电压)，通过调整U10和U11占空比，控制电感平均电流和输出电压
+### 电流采样
+R37和R38并联采样，分摊功耗  
+R36 R39 C38组成RC差分滤波器，因为SW1和SW2高速开关节点产生噪声，影响采样  
+### 自举驱动
+C42给VCC稳压  
+D3+C43
+先让低边MOS导通，给电容充电，充满后BOOT=5V，SW=0V
+高边MOS导通,SW上升到24V,电容两端电压不能突变，BOOT上升到29V，使MOS导通(Gate、BOOT、SW一起往上移动，而VGS始终维持在几伏左右)
+### 防倒灌
+![防倒灌电路](image-8.png)  
